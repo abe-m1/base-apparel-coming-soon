@@ -11,7 +11,25 @@ img {
   width: 100%; }
 
 body {
-  font-family: 'Josefin Sans', sans-serif; }
+  font-family: 'Josefin Sans', sans-serif;
+  height: 100vh; }
+
+.container {
+  display: flex;
+  height: 100%; }
+
+.content {
+  background: url(/images/bg-pattern-desktop.svg) no-repeat center center;
+  background-size: cover;
+  flex: 50%; }
+
+.image {
+  background: url(/images/hero-desktop.jpg) no-repeat center center;
+  background-size: cover;
+  flex: 50%; }
+
+.logo {
+  width: 200px; }
 
 .attribution {
   font-size: 11px;
