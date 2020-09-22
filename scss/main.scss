@@ -75,7 +75,14 @@ body {
 .content {
   background: url(/images/bg-pattern-desktop.svg) no-repeat center center;
   background-size: cover;
-  flex: 50%;
+  flex: 60%;
+}
+
+.content-container {
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  // position: relative;
 }
 
 .image {
@@ -84,8 +91,71 @@ body {
   flex: 50%;
 }
 
+.logo-container {
+  margin-top: 5rem;
+}
+
+.text-container {
+  // position: absolute;
+  // top: 40%;
+  // left: 50%;
+  // transform: translate(-50%, 20%);
+}
+
+#form {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid $desaturatedRed;
+  // padding: 10px;
+  height: 6rem;
+  padding-left: 20px;
+
+  border-radius: 50px; /*you can remove this to avoid rounded corners on the form*/
+}
+
+input {
+  flex-grow: 3;
+  border: none;
+  border-radius: 50px;
+  background-color: transparent;
+}
+
+#submit {
+  padding: 10px;
+}
+
+button {
+  width: 10rem;
+  border-radius: 50px;
+  border: none;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 0px 3px 5px hsl(0, 80%, 86%);
+}
+
 .logo {
-  width: 200px;
+  width: 18rem;
+}
+
+.upper-heading {
+  font-size: 7rem;
+  font-weight: 300;
+  color: $desaturatedRed;
+  text-transform: uppercase;
+}
+
+.lower-heading {
+  font-size: 7rem;
+  font-weight: 600;
+  color: $darkGrayishRed;
+  text-transform: uppercase;
+}
+
+.main-text {
+  font-size: 2.1rem;
+  line-height: 1.4;
+  color: $desaturatedRed;
+  margin-bottom: 3.5rem;
 }
 
 .attribution {
@@ -94,4 +164,24 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $desaturatedRed;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $desaturatedRed;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $desaturatedRed;
+}
+
+.arrow {
+  width: 1.7rem;
 }
