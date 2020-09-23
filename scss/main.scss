@@ -16,6 +16,7 @@ img {
 
 //variables
 $desaturatedRed: hsl(0, 36%, 70%);
+$desaturatedRedSoft: hsla(0, 36%, 70%, 0.3);
 $softRed: hsl(0, 93%, 68%);
 $darkGrayishRed: hsl(0, 6%, 24%);
 
@@ -75,24 +76,53 @@ body {
 .content {
   background: url(/images/bg-pattern-desktop.svg) no-repeat center center;
   background-size: cover;
-  flex: 60%;
+  flex: 65%;
 }
 
 .content-container {
   width: 60%;
-  height: 100%;
+  // height: 100%;
   margin: auto;
   // position: relative;
+  @include respond(phone) {
+    width: 80%;
+  }
 }
 
 .image {
   background: url(/images/hero-desktop.jpg) no-repeat center center;
   background-size: cover;
   flex: 50%;
+
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.mobile-image {
+  display: none;
+
+  @include respond(phone) {
+    background: url(/images/hero-mobile.jpg) no-repeat center top;
+    background-size: cover;
+    display: inline-block;
+    min-height: 250px;
+    width: 100%;
+    margin-bottom: 7rem;
+  }
 }
 
 .logo-container {
-  margin-top: 5rem;
+  width: 60%;
+  margin: auto;
+  margin-top: 6rem;
+  margin-bottom: 14rem;
+
+  @include respond(phone) {
+    width: 80%;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .text-container {
@@ -103,15 +133,25 @@ body {
 }
 
 #form {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  border: 1px solid $desaturatedRed;
+  border: 1px solid $desaturatedRedSoft;
   // padding: 10px;
   height: 6rem;
   padding-left: 20px;
-
+  position: relative;
   border-radius: 50px; /*you can remove this to avoid rounded corners on the form*/
+
+  @include respond(phone) {
+    width: 100%;
+    height: 5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.form-error {
+  border: 2px solid red !important;
 }
 
 input {
@@ -119,6 +159,7 @@ input {
   border: none;
   border-radius: 50px;
   background-color: transparent;
+  margin-left: 2rem;
 }
 
 #submit {
@@ -126,41 +167,82 @@ input {
 }
 
 button {
-  width: 10rem;
+  width: 11rem;
   border-radius: 50px;
   border: none;
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   box-shadow: 0px 3px 5px hsl(0, 80%, 86%);
+  margin: -3px;
+
+  @include respond(phone) {
+    width: 7rem;
+  }
 }
 
 .logo {
-  width: 18rem;
+  width: 16rem;
+
+  @include respond(phone) {
+    width: 11rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .upper-heading {
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 300;
   color: $desaturatedRed;
   text-transform: uppercase;
+  letter-spacing: 1.4rem;
+
+  @include respond(phone) {
+    text-align: center;
+    font-size: 5rem;
+    letter-spacing: 1rem;
+  }
 }
 
 .lower-heading {
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 600;
   color: $darkGrayishRed;
   text-transform: uppercase;
+  letter-spacing: 1.4rem;
+
+  &:nth-child(3) {
+    margin-bottom: 3rem;
+  }
+
+  @include respond(phone) {
+    text-align: center;
+    font-size: 5rem;
+    letter-spacing: 1rem;
+
+    &:nth-child(3) {
+      margin-bottom: 3rem;
+    }
+  }
 }
 
 .main-text {
-  font-size: 2.1rem;
+  font-size: 1.9rem;
   line-height: 1.4;
   color: $desaturatedRed;
   margin-bottom: 3.5rem;
+
+  @include respond(phone) {
+    text-align: center;
+    font-size: 1.6rem;
+  }
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
+
+  @include respond(phone) {
+    display: none;
+  }
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -168,8 +250,10 @@ button {
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: $desaturatedRed;
+  color: $desaturatedRedSoft;
+  font-size: 1.6rem;
   opacity: 1; /* Firefox */
+  font-weight: 400;
 }
 
 :-ms-input-placeholder {
@@ -183,5 +267,31 @@ button {
 }
 
 .arrow {
-  width: 1.7rem;
+  width: 1.2rem;
+}
+
+.error-message {
+  color: red;
+  font-weight: 400;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  display: none;
+
+  @include respond(phone) {
+    margin-top: -2rem;
+  }
+}
+
+.error-circle {
+  position: absolute;
+  width: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 11rem;
+  display: none;
+
+  @include respond(phone) {
+    right: 7rem;
+  }
 }

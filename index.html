@@ -19,10 +19,11 @@
   <body>
     <div class="container">
       <div class="content">
+        <div class="logo-container">
+          <img class="logo" src="images/logo.svg" alt="" />
+        </div>
+        <div class="mobile-image"></div>
         <div class="content-container">
-          <div class="logo-container">
-            <img class="logo" src="images/logo.svg" alt="" />
-          </div>
           <div class="text-container">
             <p class="upper-heading">we're</p>
             <p class="lower-heading">coming</p>
@@ -33,11 +34,13 @@
               and our launch deals.
             </p>
             <form id="form">
-              <input type="email" required placeholder="Email Address" />
-              <button>
+              <input id="input" type="email" placeholder="Email Address" />
+              <img class="error-circle" src="images/icon-error.svg" alt="" />
+              <button id="button-submit">
                 <img class="arrow" src="images/icon-arrow.svg" alt="" />
               </button>
             </form>
+            <div class="error-message">Please Provide a vaild email</div>
           </div>
         </div>
       </div>
@@ -52,4 +55,5 @@
       </p>
     </footer>
   </body>
+  <script src="js/index.js"></script>
 </html>
