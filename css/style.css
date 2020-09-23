@@ -38,20 +38,22 @@ body {
   background-size: cover;
   flex: 65%; }
 
-.content-container {
+.logo-container {
   width: 60%;
-  margin: auto; }
+  margin: auto;
+  margin-top: 6rem;
+  margin-bottom: 14rem; }
   @media (max-width: 600px) {
-    .content-container {
-      width: 80%; } }
-
-.image {
-  background: url(/images/hero-desktop.jpg) no-repeat center center;
-  background-size: cover;
-  flex: 50%; }
-  @media (max-width: 600px) {
-    .image {
-      display: none; } }
+    .logo-container {
+      width: 80%;
+      margin-top: 3rem;
+      margin-bottom: 1rem; } }
+  .logo-container__logo {
+    width: 16rem; }
+    @media (max-width: 600px) {
+      .logo-container__logo {
+        width: 11rem;
+        margin-bottom: 3rem; } }
 
 .mobile-image {
   display: none; }
@@ -64,16 +66,50 @@ body {
       width: 100%;
       margin-bottom: 7rem; } }
 
-.logo-container {
+.content-container {
   width: 60%;
-  margin: auto;
-  margin-top: 6rem;
-  margin-bottom: 14rem; }
+  margin: auto; }
   @media (max-width: 600px) {
-    .logo-container {
-      width: 80%;
-      margin-top: 3rem;
-      margin-bottom: 1rem; } }
+    .content-container {
+      width: 80%; } }
+
+.text-container__upper-heading {
+  font-size: 6rem;
+  font-weight: 300;
+  color: #ce9797;
+  text-transform: uppercase;
+  letter-spacing: 1.4rem; }
+  @media (max-width: 600px) {
+    .text-container__upper-heading {
+      text-align: center;
+      font-size: 5rem;
+      letter-spacing: 1rem; } }
+
+.text-container__lower-heading {
+  font-size: 6rem;
+  font-weight: 600;
+  color: #413a3a;
+  text-transform: uppercase;
+  letter-spacing: 1.4rem; }
+  .text-container__lower-heading:nth-child(3) {
+    margin-bottom: 3rem; }
+  @media (max-width: 600px) {
+    .text-container__lower-heading {
+      text-align: center;
+      font-size: 5rem;
+      letter-spacing: 1rem; }
+      .text-container__lower-heading:nth-child(3) {
+        margin-bottom: 3rem; } }
+
+.text-container__main-text {
+  font-size: 1.9rem;
+  line-height: 1.4;
+  color: #ce9797;
+  margin-bottom: 3.5rem; }
+  @media (max-width: 600px) {
+    .text-container__main-text {
+      text-align: center;
+      font-size: 1.6rem; } }
 
 #form {
   width: 100%;
@@ -91,9 +127,6 @@ body {
       height: 5rem;
       margin-bottom: 4rem; } }
 
-.form-error {
-  border: 2px solid red !important; }
-
 input {
   flex-grow: 3;
   border: none;
@@ -101,8 +134,16 @@ input {
   background-color: transparent;
   margin-left: 2rem; }
 
-#submit {
-  padding: 10px; }
+.error-circle {
+  position: absolute;
+  width: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 11rem;
+  display: none; }
+  @media (max-width: 600px) {
+    .error-circle {
+      right: 7rem; } }
 
 button {
   width: 11rem;
@@ -114,77 +155,6 @@ button {
   @media (max-width: 600px) {
     button {
       width: 7rem; } }
-
-.logo {
-  width: 16rem; }
-  @media (max-width: 600px) {
-    .logo {
-      width: 11rem;
-      margin-bottom: 3rem; } }
-
-.upper-heading {
-  font-size: 6rem;
-  font-weight: 300;
-  color: #ce9797;
-  text-transform: uppercase;
-  letter-spacing: 1.4rem; }
-  @media (max-width: 600px) {
-    .upper-heading {
-      text-align: center;
-      font-size: 5rem;
-      letter-spacing: 1rem; } }
-
-.lower-heading {
-  font-size: 6rem;
-  font-weight: 600;
-  color: #413a3a;
-  text-transform: uppercase;
-  letter-spacing: 1.4rem; }
-  .lower-heading:nth-child(3) {
-    margin-bottom: 3rem; }
-  @media (max-width: 600px) {
-    .lower-heading {
-      text-align: center;
-      font-size: 5rem;
-      letter-spacing: 1rem; }
-      .lower-heading:nth-child(3) {
-        margin-bottom: 3rem; } }
-
-.main-text {
-  font-size: 1.9rem;
-  line-height: 1.4;
-  color: #ce9797;
-  margin-bottom: 3.5rem; }
-  @media (max-width: 600px) {
-    .main-text {
-      text-align: center;
-      font-size: 1.6rem; } }
-
-.attribution {
-  font-size: 11px;
-  text-align: center; }
-  @media (max-width: 600px) {
-    .attribution {
-      display: none; } }
-
-.attribution a {
-  color: #3e52a3; }
-
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgba(206, 151, 151, 0.3);
-  font-size: 1.6rem;
-  opacity: 1;
-  /* Firefox */
-  font-weight: 400; }
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #ce9797; }
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #ce9797; }
 
 .arrow {
   width: 1.2rem; }
@@ -200,13 +170,31 @@ button {
     .error-message {
       margin-top: -2rem; } }
 
-.error-circle {
-  position: absolute;
-  width: 3rem;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 11rem;
-  display: none; }
+.form-error {
+  border: 2px solid red !important; }
+
+.image {
+  background: url(/images/hero-desktop.jpg) no-repeat center center;
+  background-size: cover;
+  flex: 50%; }
   @media (max-width: 600px) {
-    .error-circle {
-      right: 7rem; } }
+    .image {
+      display: none; } }
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(206, 151, 151, 0.3);
+  font-size: 1.6rem;
+  opacity: 1;
+  /* Firefox */
+  font-weight: 400; }
+
+.attribution {
+  font-size: 11px;
+  text-align: center; }
+  @media (max-width: 600px) {
+    .attribution {
+      display: none; } }
+
+.attribution a {
+  color: #3e52a3; }
