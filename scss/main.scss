@@ -113,9 +113,7 @@ body {
 
 .content-container {
   width: 60%;
-  // height: 100%;
   margin: auto;
-  // position: relative;
   @include respond(phone) {
     width: 80%;
   }
@@ -176,11 +174,10 @@ body {
   display: flex;
   flex-direction: row;
   border: 1px solid $desaturatedRedSoft;
-  // padding: 10px;
   height: 6rem;
   padding-left: 20px;
   position: relative;
-  border-radius: 50px; /*you can remove this to avoid rounded corners on the form*/
+  border-radius: 50px;
 
   @include respond(phone) {
     width: 100%;
@@ -255,10 +252,9 @@ button {
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: $desaturatedRedSoft;
   font-size: 1.6rem;
-  opacity: 1; /* Firefox */
+  opacity: 1;
   font-weight: 400;
 }
 

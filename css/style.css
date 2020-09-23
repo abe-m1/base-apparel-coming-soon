@@ -119,8 +119,7 @@ body {
   height: 6rem;
   padding-left: 20px;
   position: relative;
-  border-radius: 50px;
-  /*you can remove this to avoid rounded corners on the form*/ }
+  border-radius: 50px; }
   @media (max-width: 600px) {
     #form {
       width: 100%;
@@ -182,11 +181,9 @@ button {
       display: none; } }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgba(206, 151, 151, 0.3);
   font-size: 1.6rem;
   opacity: 1;
-  /* Firefox */
   font-weight: 400; }
 
 .attribution {
